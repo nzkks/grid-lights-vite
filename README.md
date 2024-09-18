@@ -1,11 +1,3 @@
-## App Name
+## Grid Lights
 
-Some info about the app
-
-#### Important steps after cloning this repository
-
-** DO NOT FORGET **
-
-- git remote remove origin
-- git remote add origin https://github.com/your-username/new-repository.git
-- git push -u origin main
+Grid Lights is a small app where an user can click on the cells to activate them, turning them with a colour. When all the cells have been activated, they will be deactivated one by one in the reverse order they were activated with a 300ms interval in between.
