@@ -1,5 +1,7 @@
+import './cell.css';
+
 const Cell = () => {
-  return <div>Cell</div>;
+  return <div className="cell"></div>;
 };
 
 export default Cell;

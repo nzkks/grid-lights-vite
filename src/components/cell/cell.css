@@ -1,0 +1,10 @@
+.cell {
+  background-color: transparent;
+  border: 1px solid #5d5d5d;
+  height: 0;
+  padding-bottom: 100%;
+}
+
+.cellActivated {
+  background-color: #3facff;
+}
