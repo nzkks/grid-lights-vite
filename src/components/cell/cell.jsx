@@ -1,7 +1,7 @@
 import './cell.css';
 
-const Cell = () => {
-  return <div className="cell"></div>;
+const Cell = ({ isActivated, onClick }) => {
+  return <button type="button" onClick={onClick} className={isActivated ? 'cell cellActivated' : 'cell'} />;
 };
 
 export default Cell;
