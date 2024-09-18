@@ -6,9 +6,16 @@ import './grid.css';
 const Grid = ({ gridConfig }) => {
   const [order, setOrder] = useState([]);
 
+  const deactivateCells = () => {};
+
   const activateCells = i => {
     const newOrder = [...order, i];
     setOrder(newOrder);
+
+    // filter out empty cells and when all the cells have been activated, deactivate them in reverse order
+    if (newOrder.length === gridConfig.flat(1).filter(Boolean).length) {
+      deactivateCells();
+    }
   };
 
   return (
