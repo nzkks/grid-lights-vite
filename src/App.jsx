@@ -1,4 +1,5 @@
 import './App.css';
+import Grid from './components/grid/grid';
 
 function App() {
   const gridConfig = [
@@ -11,11 +12,7 @@ function App() {
     <>
       <h3 style={{ textAlign: 'center' }}>Grid Lights</h3>
 
-      <div>
-        {gridConfig.flat(1).map((cell, i) => {
-          return cell === 1 ? <div key={i}>{cell}</div> : <div key={i} />;
-        })}
-      </div>
+      <Grid gridConfig={gridConfig} />
     </>
   );
 }
