@@ -6,7 +6,20 @@ import './grid.css';
 const Grid = ({ gridConfig }) => {
   const [order, setOrder] = useState([]);
 
-  const deactivateCells = () => {};
+  const deactivateCells = () => {
+    const timer = setInterval(() => {
+      setOrder(origOrder => {
+        const newOrder = origOrder.slice();
+        newOrder.pop();
+
+        if (newOrder.length === 0) {
+          clearInterval(timer);
+        }
+
+        return newOrder;
+      });
+    }, 300);
+  };
 
   const activateCells = i => {
     const newOrder = [...order, i];
