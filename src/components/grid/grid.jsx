@@ -5,8 +5,11 @@ import './grid.css';
 
 const Grid = ({ gridConfig }) => {
   const [order, setOrder] = useState([]);
+  const [isDeactivated, setIsDeactivated] = useState(false);
 
   const deactivateCells = () => {
+    setIsDeactivated(true);
+
     const timer = setInterval(() => {
       setOrder(origOrder => {
         const newOrder = origOrder.slice();
@@ -14,6 +17,7 @@ const Grid = ({ gridConfig }) => {
 
         if (newOrder.length === 0) {
           clearInterval(timer);
+          setIsDeactivated(false);
         }
 
         return newOrder;
@@ -36,7 +40,12 @@ const Grid = ({ gridConfig }) => {
       <div className="grid" style={{ gridTemplateColumns: `repeat(${gridConfig[0].length}, 1fr)` }}>
         {gridConfig.flat(1).map((cell, i) => {
           return cell === 1 ? (
-            <Cell key={i} isActivated={order.includes(i)} onClick={() => activateCells(i)} />
+            <Cell
+              key={i}
+              isActivated={order.includes(i)}
+              isDisabled={order.includes(i) || isDeactivated}
+              onClick={() => activateCells(i)}
+            />
           ) : (
             <div key={i} />
           );
