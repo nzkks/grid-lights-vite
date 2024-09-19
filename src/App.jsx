@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <h3 style={{ textAlign: 'center' }}>Grid Lights</h3>
+      <h3 style={{ textAlign: 'center' }}>Grid Lights Sequence</h3>
 
       <Grid gridConfig={gridConfig} />
     </>
