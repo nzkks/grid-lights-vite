@@ -45,6 +45,7 @@ const Grid = ({ gridConfig }) => {
               isActivated={order.includes(i)}
               isDisabled={order.includes(i) || isDeactivated}
               onClick={() => activateCells(i)}
+              ariaLabel={`cell ${i + 1}`}
             />
           ) : (
             <div key={i} />
